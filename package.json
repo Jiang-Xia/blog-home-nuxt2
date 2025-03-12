@@ -1,0 +1,46 @@
+{
+  "name": "blog-home-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build --dotenv .env.production",
+    "dev": "nuxt dev --port 5050 --dotenv .env.development",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@chenfengyuan/vue-qrcode": "^2.0.0",
+    "@vueuse/core": "^13.0.0",
+    "copy-to-clipboard": "^3.3.3",
+    "crypto-js": "^4.2.0",
+    "daisyui": "^5.0.2",
+    "dayjs": "^1.11.13",
+    "js-cookie": "^3.0.5",
+    "jsbarcode": "^3.11.6",
+    "jszip": "^3.10.1",
+    "md-editor-v3": "^5.3.2",
+    "nuxt": "^3.16.0",
+    "pinia": "^2.3.1",
+    "qrcode": "^1.5.4",
+    "smooth-signature": "^1.0.15",
+    "spark-md5": "^3.0.2",
+    "sse.js": "^2.5.0",
+    "tailvue": "^1.0.0",
+    "tailwindcss": "^4.0.13",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.2.0",
+    "@nuxtjs/tailwindcss": "^6.13.2",
+    "@tailwindcss/vite": "^4.0.13",
+    "eslint": "^9.22.0",
+    "less": "^4.2.2",
+    "sitemap": "^8.0.0",
+    "typescript": "^5.8.2",
+    "vconsole": "^3.15.1",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vue-tsc": "^2.2.8"
+  }
+}
