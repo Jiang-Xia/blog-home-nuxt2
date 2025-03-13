@@ -8,7 +8,7 @@
   // import { useMainStore } from '~/stores'
   let rsaEncrypt: any
   // 客户端才引入
-  if (process.client) {
+  if (import.meta.client) {
     import('~~/utils/jsencrypt').then((res) => {
       rsaEncrypt = res.rsaEncrypt
     })
@@ -72,7 +72,7 @@
   // const videoUrl2 = ref('https://jiang-xia.top/x-zone/api/v1/public/uploads/2023-05/神经细胞.mp4')
   // viedeo静音了(muted=true)才能自动播放
   const isPcClient = ref(false)
-  if (process.client) {
+  if (import.meta.client) {
     if (isPC()) {
       isPcClient.value = true
     }

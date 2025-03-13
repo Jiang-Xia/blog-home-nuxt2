@@ -5,7 +5,7 @@ export const messageDanger = (msg: string, timeout = 1) => {
   if (showMsgLoading) {
     return
   }
-  if (process.client) {
+  if (import.meta.client) {
     const $toast = useToast()
     $toast.show({
       type: 'danger',
@@ -22,7 +22,7 @@ export const messageSuccess = (msg = '', timeout = 1) => {
   if (showMsgLoading) {
     return
   }
-  if (process.client) {
+  if (import.meta.client) {
     const $toast = useToast()
     $toast.show({
       type: 'success',

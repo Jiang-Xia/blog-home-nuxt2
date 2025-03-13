@@ -75,7 +75,7 @@
     document.documentElement.setAttribute('data-theme', type)
     localStorage.setItem('theme', type)
   }
-  if (process.client) {
+  if (import.meta.client) {
     // 监听系统主题变化
     const match = matchMedia('(prefers-color-scheme: dark)')
     match.addEventListener('change', followOs)
@@ -83,7 +83,7 @@
   }
   // 副作用函数
   watchEffect(() => {
-    if (process.client) {
+    if (import.meta.client) {
       setTheme()
     }
   })
@@ -144,7 +144,7 @@
     removeToken(RefreshTokenKey)
     useClearUserInfo()
   }
-  if (process.client) {
+  if (import.meta.client) {
     token.value = getToken(TokenKey)
     if (token.value) {
       api.getUserInfo().then((res: any) => {

@@ -8,7 +8,7 @@ const openRequestLog = true
 const openEncrypt = import.meta.env.VITE_NUXT_OPEN_ENCRYPT === 'true'
 const log = (msg: string, type = 'log') => {
   if (openRequestLog) {
-    // @ts-ignore:
+    // @ts-expect-error: 不需要进行ts检测
     console[type](msg)
   }
 }

@@ -1,4 +1,5 @@
-import { defineComponent, h, SetupContext } from 'vue'
+import type { SetupContext } from 'vue';
+import { defineComponent, h } from 'vue'
 import config from '@/config'
 import './index.less'
 // 本地引入 阿里云图标库不能更新url了
@@ -17,7 +18,7 @@ const createIconfont = () => {
   script.setAttribute('defer', 'defer')
   document.body.appendChild(script)
 }
-if (process.client) {
+if (import.meta.client) {
   createIconfont()
 }
 

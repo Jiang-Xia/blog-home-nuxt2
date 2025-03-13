@@ -140,7 +140,7 @@
     // 偏移量 从 UTF-8编码 解析出原始字符串
     const offsetUTF8 = CryptoJS.enc.Utf8.parse(offset.value)
     const type = encryption.value
-    // @ts-ignore
+    // @ts-expect-error: 不需要进行ts检测
     const encrypted = CryptoJS[type].encrypt(wordUTF8, keyUTF8, {
       iv: offsetUTF8,
       mode: CryptoJS.mode.CBC,
@@ -174,7 +174,7 @@
       encryptedWord = ciphertext.value
     }
     const type = encryption.value
-    // @ts-ignore
+    // @ts-expect-error: 不需要进行ts检测
     const bytes = CryptoJS[type].decrypt(encryptedWord, keyUTF8, {
       iv: offsetUTF8,
       mode: CryptoJS.mode.CBC,

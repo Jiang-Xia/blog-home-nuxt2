@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import { type PropType } from 'vue'
-  import { type tocInter } from '@/utils'
+  import type { PropType } from 'vue'
+  import type { tocInter } from '@/utils'
   defineProps({
     topics: {
       type: Array as PropType<tocInter[]>,

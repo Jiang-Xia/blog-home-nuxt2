@@ -1,5 +1,4 @@
 // 'use-client'
-/* eslint-disable */
 import { enc } from 'crypto-js'
 import { publicKey, privateKey, serverPublicKey } from '~~/config/ssh'
 

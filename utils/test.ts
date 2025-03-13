@@ -5,14 +5,14 @@
 function identity<T> (value: T): T {
   return value
 }
-console.log(identity<Number>(1)) // 1
+console.log(identity<number>(1)) // 1
 
 function identity2<T, U> (value: T, message: U): T {
   console.log(message)
   return value
 }
 
-console.log(identity2<Number, string>(68, 'Semlinker'))
+console.log(identity2<number, string>(68, 'Semlinker'))
 
 function identity3<T, U> (value: T, message: U): T {
   console.log(message)

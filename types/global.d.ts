@@ -34,3 +34,4 @@ declare const pdfjsLib: any
 declare const PDFLib: any
 // rsa加密库全剧对象
 declare const JSEncrypt: any
+// declare module 'crypto-js'

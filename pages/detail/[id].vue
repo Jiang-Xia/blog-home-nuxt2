@@ -117,7 +117,7 @@
   // 目录吸顶
   const mainViewArea = ref<HTMLElement>()
   let fixedAsideBar = ref<boolean>()
-  if (process.client) {
+  if (import.meta.client) {
     // 都是响应式的
     const { y, } = useScroll(window, {})
     fixedAsideBar = computed(() => {

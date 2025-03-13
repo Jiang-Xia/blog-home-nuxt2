@@ -6,7 +6,7 @@
   import { baseUrl } from '~~/config'
   let rsaEncrypt: any
   // 客户端才引入
-  if (process.client) {
+  if (import.meta.client) {
     import('~~/utils/jsencrypt').then((res) => {
       rsaEncrypt = res.rsaEncrypt
     })
@@ -65,7 +65,7 @@
   // const posterUrl2 = 'https://jiang-xia.top/x-zone/api/v1/public/uploads/2023-05/神经细胞-封面.jpg'
   // const videoUrl2 = 'https://jiang-xia.top/x-zone/api/v1/public/uploads/2023-05/神经细胞.mp4'
   const isPcClient = ref(false)
-  if (process.client) {
+  if (import.meta.client) {
     if (isPC()) {
       isPcClient.value = true
     }
