@@ -9,15 +9,21 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky",
+    "lint-staged": "lint-staged",
+    "pm2:prod": "pm2 start ecosystem.config.js --env production",
+    "pm2:dev": "pm2 start ecosystem.config.js --env development"
   },
   "dependencies": {
     "@chenfengyuan/vue-qrcode": "^2.0.0",
     "@nuxtjs/tailwindcss": "^6.13.2",
+    "@pinia/nuxt": "^0.10.1",
     "@vueuse/core": "^13.0.0",
+    "@vueuse/nuxt": "^13.0.0",
     "copy-to-clipboard": "^3.3.3",
     "crypto-js": "^4.2.0",
-    "daisyui": "^5.0.3",
+    "daisyui": "^4.12.14",
     "dayjs": "^1.11.13",
     "js-cookie": "^3.0.5",
     "jsbarcode": "^3.11.6",
@@ -34,15 +40,32 @@
     "vue-router": "^4.5.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@nuxt/eslint": "^1.2.0",
+    "@nuxtjs/stylelint-module": "^5.2.0",
     "@tailvue/nuxt": "^1.0.0",
     "@types/crypto-js": "^4.2.2",
     "eslint": "^9.22.0",
+    "husky": "^9.1.7",
     "less": "^4.2.2",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
     "sitemap": "^8.0.0",
     "typescript": "^5.8.2",
     "unplugin-icons": "^22.1.0",
     "vconsole": "^3.15.1",
     "vue-tsc": "^2.2.8"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    "*.vue": [
+      "eslint --fix"
+    ],
+    "*.{less,css}": [
+      "stylelint **/*.{css,js}"
+    ]
   }
 }

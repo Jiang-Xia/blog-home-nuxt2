@@ -8,7 +8,15 @@ console.warn({
   prefixPath,
 });
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxtjs/stylelint-module',
+    '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
+    '~/modules/sitemap',
+    '@tailvue/nuxt',
+    '@pinia/nuxt',
+  ],
   devtools: { enabled: true },
   app: {
     head: {
@@ -37,7 +45,23 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
+
+  devServer: {
+    // 证书安装 https://zhuanlan.zhihu.com/p/678165318
+    https: false,
+  },
   compatibilityDate: '2024-11-01',
+  // 此文件只能用process
+  nitro: {
+    // 配置代理
+    devProxy: {
+      [prefixPath]: {
+        target: process.env.VITE_NUXT_BASE_URL,
+        changeOrigin: true,
+        rewrite: (path: string) => path.replace(new RegExp(`^${prefixPath}`), ''),
+      },
+    },
+  },
   vite: {
     plugins: [
       Icons({
@@ -45,9 +69,6 @@ export default defineNuxtConfig({
         autoInstall: true,
       }),
     ],
-  },
-  tailwindcss:{
-    cssPath:'~/assets/css/main.css',
   },
   eslint: {
     config: {
@@ -58,5 +79,14 @@ export default defineNuxtConfig({
         jsx: true, // 支持jsx
       },
     },
+  },
+  sitemap: {
+    hostname: 'https://jiang-xia.top',
+  },
+  stylelint: {
+    /* module options */
+  },
+  tailwindcss: {
+    cssPath: '~/assets/css/main.css',
   },
 });
