@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import Icons from 'unplugin-icons/vite';
-import tailwindcss from '@tailwindcss/vite';
 
 const prefixPath: any = process.env.VITE_NUXT_PREFIX_PATH;
 console.warn({
@@ -9,7 +8,7 @@ console.warn({
   prefixPath,
 });
 export default defineNuxtConfig({
-  modules: ['@nuxt/eslint'],
+  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss'],
   devtools: { enabled: true },
   app: {
     head: {
@@ -41,16 +40,15 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   vite: {
     plugins: [
-      tailwindcss(),
       Icons({
         // the feature below is experimental ⬇️
         autoInstall: true,
       }),
     ],
   },
-  // tailwindcss:{
-  //   cssPath:'~/assets/css/main.css',
-  // },
+  tailwindcss:{
+    cssPath:'~/assets/css/main.css',
+  },
   eslint: {
     config: {
       stylistic: {
