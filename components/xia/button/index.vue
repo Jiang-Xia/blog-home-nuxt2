@@ -29,8 +29,12 @@ defineProps({
     bottom: 0;
     content: '';
     left: 0;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     opacity: 0.5;
@@ -38,7 +42,9 @@ defineProps({
     position: absolute;
     right: 0;
     top: 0;
-    transition: background-position 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    transition:
+      background-position 0.3s ease-in-out,
+      opacity 0.2s ease-in-out;
     width: 100%;
   }
   .gradient-border:hover:before {

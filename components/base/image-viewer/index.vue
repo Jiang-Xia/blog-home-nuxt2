@@ -110,7 +110,7 @@ const props = defineProps({
     default: 0,
   },
 });
-// 触发关闭事件
+  // 触发关闭事件
 const emit = defineEmits(['close']);
 
 const isOpen = ref(true);

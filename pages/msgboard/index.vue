@@ -14,7 +14,7 @@ interface MsgInterFace {
 const { data: msgboardList, refresh } = await useAsyncData('msgboard_Get', () =>
   request.get('/msgboard').then((res: any) => res.list),
 );
-// 分组
+  // 分组
 const buildTree = (list: any[], rootId = 0) => {
   const tree: any[] = [];
   for (const v of list) {
@@ -52,7 +52,7 @@ const getAllMsgboard = async () => {
   const list = await request.get('/msgboard');
   msgboardList.value = buildTree(list);
 };
-// 邮箱正则
+  // 邮箱正则
 const confirmHandle = async () => {
   try {
     const keys = Object.keys(msgForm);
@@ -74,7 +74,7 @@ const confirmHandle = async () => {
     console.log(error);
   }
 };
-// 回复功能
+  // 回复功能
 const clickReplyHandle = (item: any) => {
   dialog.value = true;
   currentItem.value = item;
@@ -112,7 +112,7 @@ const okHandle = async () => {
   dialog.value = false;
   getAllMsgboard();
 };
-// 删除留言
+  // 删除留言
 const delComment = async (t: number, item: any) => {
   let ids = [item.id];
   if (t === 0 && item.children) {

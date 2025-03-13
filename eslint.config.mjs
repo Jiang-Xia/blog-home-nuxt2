@@ -20,6 +20,7 @@ export default withNuxt(
       'import/no-mutable-exports': 'off',
     },
   },
-).prepend(
+)
+  .prepend
   // ...Prepend some flat configs in front
-);
+  ();

@@ -25,7 +25,7 @@ const scrollTop = ref(0);
 const scrollHandle = () => {
   scrollTop.value = document.documentElement.scrollTop || document.body.scrollTop; // 微信里面获取body的
 };
-// 客戶端执行
+  // 客戶端执行
 onMounted(() => {
   // console.log(document.documentElement)
   /*

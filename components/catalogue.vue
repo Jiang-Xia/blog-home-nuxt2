@@ -16,12 +16,12 @@ const goTopicItem = (item: tocInter) => {
     document.documentElement.scrollTop = wh + top - 58;
   }
 };
-// 滚动高亮目录没有做
-// const currentActive = ref(null)
-// const scrollHandle = (e: any) => {
-//   const ids: string[] = props.topics.map((v: any) => +'#' + v.id)
-// }
-// window.addEventListener('scroll', throttle(scrollHandle, 100), true)
+  // 滚动高亮目录没有做
+  // const currentActive = ref(null)
+  // const scrollHandle = (e: any) => {
+  //   const ids: string[] = props.topics.map((v: any) => +'#' + v.id)
+  // }
+  // window.addEventListener('scroll', throttle(scrollHandle, 100), true)
 </script>
 
 <template>

@@ -30,11 +30,9 @@ const active = ref(0);
       class="tab-pane"
     >
       <div
-        :style="
-          {
-            'border-top-left-radius': active===0?'0px': '',
-          }
-        "
+        :style="{
+          'border-top-left-radius': active === 0 ? '0px' : '',
+        }"
         class="tab-pane__content bg-base-300 rounded-b-lg rounded-tr-lg rounded-tl-lg min-h-16"
       >
         <slot

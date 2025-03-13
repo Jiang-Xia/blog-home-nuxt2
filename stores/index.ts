@@ -22,7 +22,6 @@ export const useWebsiteStore = defineStore('websiteStore', {
     description: '',
   }),
   actions: {
-    async fetch() {
-    },
+    async fetch() {},
   },
 });

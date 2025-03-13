@@ -177,7 +177,7 @@ const encrypted = () => {
     mode: CryptoJS.mode.CBC,
     padding: CryptoJS.pad.Pkcs7,
   });
-  // 转成16进制 变成大写不影响解密
+    // 转成16进制 变成大写不影响解密
   if (outputType.value === 'Hex') {
     ciphertext.value = encrypted.toString(CryptoJS.format.Hex).toUpperCase();
   }

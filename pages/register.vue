@@ -58,7 +58,7 @@ const okHandle = async () => {
     await navigateTo('/login');
   }, 500);
 };
-// 更换验证码
+  // 更换验证码
 const changeAuthCode = () => {
   authCodeUrl.value = codeUrl + '?t=' + new Date().getTime();
 };

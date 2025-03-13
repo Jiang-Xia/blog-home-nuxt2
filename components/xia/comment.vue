@@ -52,7 +52,7 @@ const delCommentHandle = async (id: string) => {
 const uid = computed(() => {
   return userInfo.value.uid;
 });
-// 当前点击回复的id评论
+  // 当前点击回复的id评论
 const currentReplyBoxId = ref('');
 // 当前点击评论id（父级）
 const currentParentId = ref('');
@@ -98,7 +98,7 @@ const clickReplyHandle = (type: string, item: any, pId?: string) => {
     targetUser.value = item.userInfo;
   }
 };
-/* 评论功能 结束 */
+  /* 评论功能 结束 */
 
 /* 回复功能 开始 */
 // 当前回复的目标用户
@@ -107,7 +107,7 @@ const targetUsername = computed(() => {
   const { nickname } = targetUser.value;
   return nickname;
 });
-// 回复输入框实例
+  // 回复输入框实例
 const commentRefs = ref([]);
 const replyRefs = ref([]);
 
@@ -137,11 +137,11 @@ const delReplytHandle = async (id: string) => {
   messageSuccess('删除成功');
   emits('commented');
 };
-// 回复确定按钮回调
+  // 回复确定按钮回调
 const replyedHandle = (content: string) => {
   addReplytHandle(content);
 };
-/* 回复功能 结束 */
+  /* 回复功能 结束 */
 </script>
 
 <template>

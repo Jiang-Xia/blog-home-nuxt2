@@ -75,7 +75,7 @@ const getArticleListHandle = async (val = 1) => {
   articleList.value = res.list;
   queryPrams.total = res.pagination.total;
 };
-// 获取标签名(暂时没有用)
+  // 获取标签名(暂时没有用)
 const getTagLabel = (arr: []): string => {
   // 如果是js的话，这个方法会写得很简单
   //  ts的话，它会提前对各种值进行类型推导，避免了一些取值的错误（比如在undefined和null取属性值）
@@ -109,7 +109,7 @@ const clickTagHandle = (item: itemState, type: string) => {
   }
   getArticleListHandle(1);
 };
-// 分页
+  // 分页
 const current = ref(1);
 const currentChangeHandle = (val: number) => {
   getArticleListHandle(val);
@@ -155,7 +155,7 @@ const categoryMouseenter = (e: any, item: any) => {
 const categoryMouseleave = (e: any) => {
   e.target.style.backgroundColor = '';
 };
-// 天气
+  // 天气
 const weatherData = ref<any>({});
 const userInfo = useUserInfo();
 const weatherUrl
@@ -430,8 +430,8 @@ const theme = useTheme();
           :color="item.color"
           :class="item.id === queryPrams.category ? 'active' : ''"
           @click="clickTagHandle(item, '分类')"
-          @mouseenter="e => categoryMouseenter(e, item)"
-          @mouseleave="e => categoryMouseleave(e)"
+          @mouseenter="(e) => categoryMouseenter(e, item)"
+          @mouseleave="(e) => categoryMouseleave(e)"
         >
           <div
             class="category__inner flex justify-between items-center"

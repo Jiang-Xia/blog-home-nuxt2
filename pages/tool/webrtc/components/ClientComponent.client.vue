@@ -50,7 +50,7 @@ const {
     audio: { deviceId: currentMicrophone },
   },
 });
-// 保存视频
+  // 保存视频
 const saveUserMedia = () => {
   mediaRecorderUserMedia.value.stop();
   mediaRecorderDisplayMedia.value = null;

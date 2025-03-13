@@ -14,9 +14,9 @@ import Stream from './components/stream.vue';
 const theme = useTheme();
 const pic
     = 'https://jiang-xia.top/x-blog/api/v1/static/uploads/2023-03/ubul73p9bipisom18lvt12-react.webp';
-// watch(() => theme.value, () => {
-//   console.log('watch========》', theme.value)
-// })
+  // watch(() => theme.value, () => {
+  //   console.log('watch========》', theme.value)
+  // })
 </script>
 
 <style lang="less">

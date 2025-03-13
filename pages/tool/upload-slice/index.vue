@@ -149,7 +149,7 @@ function limitRequests2(chunks, fn, maxRequest) {
         }
       }
     };
-    // 初始化拿出最大最大并发数请求
+      // 初始化拿出最大最大并发数请求
     for (let i = 0; i < maxRequest; i++) {
       makeRequest(requests.shift());
     }
@@ -169,10 +169,10 @@ const progressValue = computed(() => {
   // console.log('progressValue==================>', w)
   return w;
 });
-// watch(() => curProgress.value, (n) => {
-//   console.log('curProgress===========>', n)
-// })
-// 状态icon
+  // watch(() => curProgress.value, (n) => {
+  //   console.log('curProgress===========>', n)
+  // })
+  // 状态icon
 const statusIcon = computed(() => {
   let icon;
   if (starting.value) {
@@ -186,7 +186,7 @@ const statusIcon = computed(() => {
   }
   return icon;
 });
-// input callback
+  // input callback
 const changeHandle = async (e) => {
   curProgress.value = 0;
   if (!e.target.files.length) {
@@ -197,7 +197,7 @@ const changeHandle = async (e) => {
   fileBlob = e.target.files[0];
   await uploadFile(fileBlob);
 };
-// btn callback
+  // btn callback
 const startingHandle = () => {
   if (starting.value) {
     currentIndex = chunkTotal.value;
@@ -210,7 +210,7 @@ const startingHandle = () => {
   starting.value = !starting.value;
   // console.log(starting.value)
 };
-// 批量上传切片
+  // 批量上传切片
 const uploadChunks = async (chunks) => {
   try {
     const resList = await limitRequests2(chunks, uploadHandler, MaxRequest);
@@ -222,13 +222,13 @@ const uploadChunks = async (chunks) => {
     //  console.log(error)
   }
 };
-// 转为formData
+  // 转为formData
 const toFormData = (chunk) => {
   const fd = new FormData();
   Object.keys(chunk).forEach(k => fd.append(k, chunk[k]));
   return fd;
 };
-// 上传
+  // 上传
 const uploadHandler = (formData) => {
   return uploadFileRequest(formData);
 };
@@ -246,7 +246,7 @@ const createChunksByWorker = (file) => {
     };
   });
 };
-// 上传执行函数
+  // 上传执行函数
 const uploadFile = async (file) => {
   // 设置文件名
   fileName.value = file.name;

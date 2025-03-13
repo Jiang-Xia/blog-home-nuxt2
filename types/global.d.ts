@@ -26,8 +26,8 @@ interface userInfoState {
   role: string;
 }
 
-declare module 'js-cookie'
-declare module 'tailvue'
+declare module 'js-cookie';
+declare module 'tailvue';
 // pdf.js全局对象
 declare const pdfjsLib: any;
 // pdf-lib全局对象

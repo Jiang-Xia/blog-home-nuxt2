@@ -84,8 +84,15 @@ const previewThemeChange = (e: any) => {
   // console.log(previewTheme.value);
 };
 const scrollElement = ref<HTMLElement>();
-const themeList: any = ref(['default', 'github', 'vuepress', 'mk-cute', 'smart-blue', 'cyanosis']);
-// 为了客户端时重新渲染才能设置为缓存的暗黑模式，themeLocal 另设置一个变量会导致签署数据两次
+const themeList: any = ref([
+  'default',
+  'github',
+  'vuepress',
+  'mk-cute',
+  'smart-blue',
+  'cyanosis',
+]);
+  // 为了客户端时重新渲染才能设置为缓存的暗黑模式，themeLocal 另设置一个变量会导致签署数据两次
 const mdKey = ref(new Date().getTime());
 const likes = ref([]);
 // 本地点赞记录

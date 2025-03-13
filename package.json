@@ -12,6 +12,7 @@
     "lint:fix": "eslint . --fix",
     "prepare": "husky",
     "lint-staged": "lint-staged",
+    "prettier": "prettier . --write",
     "pm2:prod": "pm2 start ecosystem.config.js --env production",
     "pm2:dev": "pm2 start ecosystem.config.js --env development"
   },
@@ -47,6 +48,8 @@
     "@tailvue/nuxt": "^1.0.0",
     "@types/crypto-js": "^4.2.2",
     "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
     "husky": "^9.1.7",
     "less": "^4.2.2",
     "lint-staged": "^15.5.0",
@@ -59,13 +62,16 @@
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
-      "eslint --fix"
+      "prettier --write",
+      "eslint . --fix"
     ],
     "*.vue": [
+      "prettier --write",
       "eslint --fix"
     ],
     "*.{less,css}": [
-      "stylelint **/*.{css,js}"
+      "prettier --write",
+      "eslint . --fix"
     ]
   }
 }

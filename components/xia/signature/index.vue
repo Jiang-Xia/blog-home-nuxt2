@@ -230,7 +230,7 @@ const reloadPdf = async (pdfData = props.pdfSrc) => {
       canvasContext: context,
       viewport,
     };
-    // console.log(page)
+      // console.log(page)
     await page.render(renderContext);
     loading.value = false;
   }
@@ -292,8 +292,8 @@ const editPdf = async () => {
     }
   }
 };
-// pdf
-// all canvas to pdf
+  // pdf
+  // all canvas to pdf
 const pdfWrap = ref();
 
 // 签名组件成功

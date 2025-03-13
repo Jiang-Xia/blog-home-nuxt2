@@ -33,7 +33,7 @@ const form: formState = reactive({
   password: '',
   authCode: '',
 });
-/* 登录 */
+  /* 登录 */
 const okHandle = async () => {
   const msg: formState = {
     mobile: '填写手机号',
@@ -61,7 +61,7 @@ const okHandle = async () => {
   }
   catch (err) {}
 };
-// 更换验证码
+  // 更换验证码
 const changeAuthCode = () => {
   authCodeUrl.value = codeUrl + '?t=' + new Date().getTime();
 };

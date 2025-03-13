@@ -35,15 +35,15 @@ defineProps({
           p-id="1865"
         />
       </svg>
-      <span
-        class="text-sm text-gray-500 dark:text-gray-700 mt-2 inline-block"
-      >{{ description }}</span>
+      <span class="text-sm text-gray-500 dark:text-gray-700 mt-2 inline-block">{{
+        description
+      }}</span>
     </slot>
   </div>
 </template>
 
 <style lang="less" scoped>
-.xia-empty {
-  height: 100px;
-}
+  .xia-empty {
+    height: 100px;
+  }
 </style>

@@ -19,10 +19,10 @@ const addReplytHandle = () => {
 const placeholder = computed(() => {
   return '@' + props.name;
 });
-// const replyClear = () => {
-//   inputContent.value = ''
-// }
-// clear
+  // const replyClear = () => {
+  //   inputContent.value = ''
+  // }
+  // clear
 </script>
 
 <template>
