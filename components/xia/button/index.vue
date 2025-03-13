@@ -1,12 +1,13 @@
 <script setup lang="ts">
-  const emit = defineEmits(['click'])
-  defineProps({
-    text: {
-      type: String,
-      default: '按钮',
-    },
-  })
+const emit = defineEmits(['click']);
+defineProps({
+  text: {
+    type: String,
+    default: '按钮',
+  },
+});
 </script>
+
 <template>
   <div
     class="gradient-border text-md sm:text-xl py-2 px-4 sm:py-3 sm:px-6 cursor-pointer"
@@ -16,6 +17,7 @@
     <slot>{{ text }}</slot>
   </div>
 </template>
+
 <style lang="less" scoped>
   /* 渐变 伪类border */
   .gradient-border:before {

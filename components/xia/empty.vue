@@ -1,5 +1,5 @@
 <script setup lang="ts">
- defineProps({
+defineProps({
   color: {
     type: String,
     default: '',
@@ -8,9 +8,11 @@
     type: String,
     default: '空空如也',
   },
-})
+});
 </script>
+
 <script lang="ts"></script>
+
 <template>
   <div class="m-auto text-center xia-empty">
     <!-- 可以使用插槽 -->
@@ -39,6 +41,7 @@
     </slot>
   </div>
 </template>
+
 <style lang="less" scoped>
 .xia-empty {
   height: 100px;

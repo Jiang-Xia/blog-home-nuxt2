@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import Icons from "unplugin-icons/vite";
-import tailwindcss from "@tailwindcss/vite";
+import Icons from 'unplugin-icons/vite';
+import tailwindcss from '@tailwindcss/vite';
 
 const prefixPath: any = process.env.VITE_NUXT_PREFIX_PATH;
 console.warn({
@@ -9,44 +9,36 @@ console.warn({
   prefixPath,
 });
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
+  modules: ['@nuxt/eslint'],
   devtools: { enabled: true },
-  modules: ["@nuxt/eslint"],
-  css: ["~/assets/css/main.css"],
   app: {
     head: {
       link: [
         {
-          rel: "stylesheet",
-          href: "https://cdn.staticfile.org/csshake/1.5.3/csshake.min.css",
+          rel: 'stylesheet',
+          href: 'https://cdn.staticfile.org/csshake/1.5.3/csshake.min.css',
         },
       ],
       script: [
         {
           defer: true,
-          src: "https://cdn.staticfile.net/pdf-lib/1.17.1/pdf-lib.min.js",
+          src: 'https://cdn.staticfile.net/pdf-lib/1.17.1/pdf-lib.min.js',
         },
         {
           defer: true,
-          src: "https://cdn.staticfile.net/pdf.js/3.9.179/pdf.min.js",
+          src: 'https://cdn.staticfile.net/pdf.js/3.9.179/pdf.min.js',
         },
-        { defer: true, src: "jsencrypt.min.js" },
+        { defer: true, src: 'jsencrypt.min.js' },
       ],
     },
     pageTransition: {
-      name: "scale",
+      name: 'scale',
       appear: true,
-      mode: "out-in",
+      mode: 'out-in',
     },
   },
-  // tailwindcss:{
-  //   cssPath:'~/assets/css/main.css',
-  // },
-  eslint: {
-    config: {
-      stylistic: {},
-    },
-  },
+  css: ['~/assets/css/main.css'],
+  compatibilityDate: '2024-11-01',
   vite: {
     plugins: [
       tailwindcss(),
@@ -55,5 +47,18 @@ export default defineNuxtConfig({
         autoInstall: true,
       }),
     ],
+  },
+  // tailwindcss:{
+  //   cssPath:'~/assets/css/main.css',
+  // },
+  eslint: {
+    config: {
+      stylistic: {
+        indent: 2, // 缩进
+        semi: true, // 分号
+        quotes: 'single', // 单引号
+        jsx: true, // 支持jsx
+      },
+    },
   },
 });
